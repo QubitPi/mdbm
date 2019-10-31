@@ -9,6 +9,20 @@
 	<name>mdbm_java</name>
 	<description>Java wrappers for mdbm</description>
 
+	<distributionManagement>
+		<repository>
+			<id>bintray-qubitpi-Maven</id>
+			<name>qubitpi-Maven</name>
+			<url>https://api.bintray.com/maven/qubitpi/Maven/MDBM/;publish=1</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:https://git@github.com:QubitPi/mdbm.git</connection>
+		<developerConnection>scm:git:git@github.com:QubitPi/mdbm.git</developerConnection>
+		<url>https://github.com/QubitPi/mdbm</url>
+		<tag>HEAD</tag>
+	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
@@ -199,6 +213,12 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<!-- Publish to artifactory -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
