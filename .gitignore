@@ -1,3 +1,12 @@
+.idea/
+*.iml
+
+gendoc/_build/
+gendoc/c-api.stamp
+gendoc/developer.stamp
+gendoc/html/
+gendoc/release_notes.txt
+
 src/lib/object/
 src/test/func-test/object/
 src/test/pool_test/object/

@@ -1,14 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.yahoo.mdbm</groupId>
 	<artifactId>mdbm_java</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>1.2.1-SNAPSHOT</version>
 	<name>mdbm_java</name>
 	<description>Java wrappers for mdbm</description>
 
+	<distributionManagement>
+		<repository>
+			<id>bintray-qubitpi-Maven</id>
+			<name>qubitpi-Maven</name>
+			<url>https://api.bintray.com/maven/qubitpi/Maven/MDBM/;publish=1</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:https://git@github.com:QubitPi/mdbm.git</connection>
+		<developerConnection>scm:git:git@github.com:QubitPi/mdbm.git</developerConnection>
+		<url>https://github.com/QubitPi/mdbm</url>
+		<tag>HEAD</tag>
+	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
@@ -59,7 +72,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -114,7 +127,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -199,6 +212,12 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<!-- Publish to artifactory -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

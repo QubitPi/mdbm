@@ -80,12 +80,12 @@ ARCH_SUFFIX=64
 endif
 
 # where to install files:
-#PREFIX=/usr/local
-PREFIX ?= /tmp/install
-BIN_PREFIX ?= $(PREFIX)/bin
-PERL_PREFIX ?= $(PREFIX)
-MAN_PREFIX ?= $(PREFIX)/share/man
-INC_PREFIX ?= $(PREFIX)/include
+PREFIX=/usr/local
+#PREFIX ?= /tmp/install
+BIN_PREFIX = $(PREFIX)/bin
+PERL_PREFIX = $(PREFIX)
+MAN_PREFIX = $(PREFIX)/share/man
+INC_PREFIX = $(PREFIX)/include
 
 ############################################################
 
@@ -140,7 +140,7 @@ else
   OBJDIR=$(OBJDIR_BASE)
 endif
 LOCAL_LDADD = -L$(TOPDIR)/src/lib/$(OBJDIR)
-COMP_FLAGS +=  -g -O2 -I/usr/include -I$(INCDIR) -I$(TOPDIR)/include -I. -Wall -fPIC
+COMP_FLAGS +=  -g -O2 -I/usr/lib/jvm/java-8-openjdk-amd64/include/ -I/usr/lib/jvm/java-8-openjdk-amd64/include/linux/ -I/usr/include -I$(INCDIR) -I$(TOPDIR)/include -I. -Wall -fPIC
 
 # OpenSSL is installed by default on macOS, but the library and headers are not.
 # Thus here we'll check for an installation of OpenSSL with Homebrew,
